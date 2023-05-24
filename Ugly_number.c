@@ -1,51 +1,38 @@
 #include<stdio.h>
+int ugly(int n)
+{
+if(n==1)
+{
+    return 1;
+}
+if(n<=0)
+{
+    return 0;
+}
+else if(n%2==0)
+{
+    return ugly(n=n/2);
+}
+else if(n%3==0)
+{
+    return ugly(n=n/3);
+}
+else if(n%7==0)
+{
+    return ugly(n=n/7);
+}
+}
 int main()
 {
-	int n,q,c=0;
-	scanf("%d",&n);
-	q=n;
-	if(q>0)
-	{
-		while(q!=0)
-		{
-			if(q%2==0)
-			{
-				q=q/2;
-			}
-			else if(q%3==0)
-			{
-				q=q/3;
-			}
-			else if(q%5==0)
-			{
-				q=q/5;
-			}
-			else
-			{
-				c++;
-				break;
-			}
-		}
-		if(c=1)
-		{
-		if(q==1)
-		{
-			printf("Ugly Number");
-		}
-		else
-		{
-			printf("Not Ugly Number");
-		}
-		}
-		else
-		{
-			printf("Ugly Number");
-		}
-		
-	}
-	else
-	{
-		printf("Not Ugly Number");
-	}
-	
+    int n;
+    scanf("%d",&n);
+    if(ugly(n)==1)
+    {
+        printf("Ugly Number");
+    }
+    else
+    {
+        printf("Not Ugly Number");
+    }
+
 }
