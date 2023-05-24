@@ -1,20 +1,31 @@
 #include<stdio.h>
-#include<math.h>
 int main()
 {
-    int n,f=0,s=1,t,a;
+    int n,a=0,b=1,c,i;
     scanf("%d",&n);
-    t=f+s;
-    while(t<=n)
+    int arr[100],j=0,x,y;
+    for(i=0;i<n;i++)
     {
-        f=s;
-        s=t;
-        t=f+s;
+        arr[i]=a;c=a+b;a=b;b=c;
     }
-    if((abs(t-n)>abs(s-n)))
-    printf("%d",s);
-    else if(abs(t-n)==abs(s-n))
-    printf("%d %d",s,t);
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]<=n && arr[i+1]>=n)
+        {
+            x=arr[i];y=arr[i+1];
+            break;
+        }
+    }
+    if((n-x)>(y-n))
+    {
+        printf("%d",y);
+    }
+    else if((n-x)<(y-n))
+    {
+        printf("%d",x);
+    }
     else
-    printf("%d",t);
-	}
+    {
+        printf("%d %d",x,y);
+    }
+}
